@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)https://www.imissmylibrary.com/ -->
+<html lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="Library, Virtual, Ambience, Music, Study, Relax, Background Noise">
+		<meta name="author" content="Shardul Rakshit">
+		<title>i miss my library</title>
+		<link rel="icon" type="image/PNG" href="https://www.imissmylibrary.com/assets/favicon.PNG">
+		<link rel="stylesheet" href="./i miss my library_files/style.css">
+		<link rel="stylesheet" href="./i miss my library_files/all.min.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com/">
+		<link href="./i miss my library_files/css2" rel="stylesheet">
+
+		<script src="./i miss my library_files/jquery.min.js"></script>
+
+	</head>
+	<body>
+
+		<section class="header">
+			<button class="nav-links" onclick=" window.open(&#39;https://srakshi1.github.io/&#39;, &#39;_blank&#39;)">my portfolio</button>
+			<button id="modalButton" class="nav-links">about</button>
+
+			<div>
+				<div id="myModal" class="modal" style="display: none;">
+				  <div class="modal-content">
+				    <span class="close">×</span>
+				    <center><h2>about</h2></center><br>
+				    <p>Inspired by <a href="https://imissmycafe.com/" target="_blank">IMissMyCafe</a>, <a href="http://imissmybar.com/" target="_blank">IMissMyBar</a>, and <a href="https://imisstheoffice.eu/" target="_blank">IMissMyOffice</a>. Sound effects obtained from <a href="https://www.zapsplat.com/" target="_blank">ZapSplat</a>. Built by Shardul Rakshit. No copyright infringement intended.</p>
+				  </div>
+
+				</div>
+			</div>
+		</section>	
+
+		<section class="content">
+			<div class="left">
+				<div class="text-box">
+					<h1>I miss my amusement park</h1>
+					<p>Have a wonderful day!</p>
+				</div>
+
+				<div class="container">
+					<input type="text" class="txtb" placeholder="Fun Things To Do!">
+					<div class="notcomp">
+						<h3>Not Done</h3>
+					</div>
+
+					<div class="comp">
+						<h3>Done</h3>
+					</div>
+				</div>
+
+				<script type="text/javascript">
+					$(".txtb").on("keyup",function(e){
+						if(e.keyCode==13 && $(".txtb").val() != "") {
+							var task = $("<div class='task'></div>").text($(".txtb").val());
+
+							var del = $("<i class='fas fa-trash-alt'></div>").click(function(){
+								var p=$(this).parent();
+								p.fadeOut(function(){
+									p.remove();
+								})
+							});
+
+							var check = $("<i class='fas fa-check'></div>").click(function(){
+								var p=$(this).parent();
+								p.fadeOut(function(){
+									$(".comp").append(p);
+									p.fadeIn();
+								});
+								$(this).remove();
+							});
+
+							task.append(del, check);
+							$(".notcomp").append(task);
+
+							$(".txtb").val("");
+						}
+				});
+				</script>
+			</div>
+
+			<div class="middle">
+				<img src="./i miss my library_files/amt4.PNG" alt="library sketch" class="illustration">
+			</div>
+
+			<div class="right">
+				<div class="massPause hidden">
+					<p id="pauseNotice"> Pause all &nbsp;</p>
+					<input type="checkbox" id="pauseAll" onclick="pauseAll()">
+				</div>
+
+				<div class="audio unpressed">
+					<span>
+						<p> Fireworks &nbsp;</p>
+						<button id="play-6" onclick="playSound(6)"></button>
+					</span>
+					<audio loop="" id="6">
+						<source src="assets/felix_blume_fireworks_celebration_new_year.mp3" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<span>
+						<div class="volume-control" id="vol"></div>
+						<input type="range" onchange="changeVolume(0, this.value)" min="0" max="1" step="0.025" value="0.70" class="vol-control">
+					</span>
+				</div>
+		
+
+				<div class="audio unpressed">
+					<span>
+						<p> Street Ambiance &nbsp;</p>
+						<button id="play-5" onclick="playSound(5)"></button>
+					</span>
+					<audio loop="" id="5">
+						<source src="assets/chatter.mp3" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<span>
+						<div class="volume-control" id="vol"></div>
+						<input type="range" onchange="changeVolume(5, this.value)" min="0" max="1" step="0.025" value="0.70" class="vol-control">
+					</span>
+				</div>
+
+				<div class="audio unpressed">
+					<span>
+						<p> Roller Coaster &nbsp;</p>
+						<button id="play-1" onclick="playSound(1)"></button>
+					</span>
+					<audio loop="" id="1">
+						<source src="assets/leisure_roller_coaster_car_pass_people_scream.mp3" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<span>
+						<div class="volume-control" id="vol"></div>
+						<input type="range" onchange="changeVolume(1, this.value)" min="0" max="1" step="0.025" value="0.70" class="vol-control">
+					</span>
+				</div>
+				
+				<div class="audio unpressed">
+					<span>
+						<p> Wheel Spin &nbsp;</p>
+						<button id="play-2" onclick="playSound(2)"></button>
+					</span>
+					<audio loop="" id="2">
+						<source src="assets/zapsplat_multimedia_wheel_of_fortune_style_wheel_spin_001_13209.mp3" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<span>
+						<div class="volume-control" id="vol"></div>
+						<input type="range" onchange="changeVolume(2, this.value)" min="0" max="1" step="0.025" value="0.70" class="vol-control">
+					</span>
+				</div>
+
+				<div class="audio unpressed">
+					<span>
+						<p> Carousel Music &nbsp;</p>
+						<button id="play-0" onclick="playSound(0)"></button>
+					</span>
+					<audio loop="" id="0">
+						<source src="assets/aaj_0755_MerryGoRnd03.mp3" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<span>
+						<div class="volume-control" id="vol"></div>
+						<input type="range" onchange="changeVolume(0, this.value)" min="0" max="1" step="0.025" value="0.70" class="vol-control">
+					</span>
+				</div>
+
+				<div class="audio unpressed">
+					<span>
+						<p> Happy Circus Music &nbsp;</p>
+						<button id="play-3" onclick="playSound(3)"></button>
+					</span>
+					<audio loop="" id="3">
+						<source src="assets/music_zapsplat_crazy_clowns.mp3" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<span>
+						<div class="volume-control" id="vol"></div>
+						<input type="range" onchange="changeVolume(3, this.value)" min="0" max="1" step="0.025" value="0.70" class="vol-control">
+					</span>
+				</div>
+
+				<div class="audio unpressed">
+					<span>
+						<p> Ominous Circus Music &nbsp;</p>
+						<button id="play-4" onclick="playSound(4)"></button>
+					</span>
+					<audio loop="" id="4">
+						<source src="assets/music_zapsplat_twisted_clowns.mp3" type="audio/mpeg">
+						<p> Your browser doesn't support HTML 5 sounds.</p>
+					</audio>
+					<span>
+						<div class="volume-control" id="vol"></div>
+						<input type="range" onchange="changeVolume(4, this.value)" min="0" max="1" step="0.025" value="0.70" class="vol-control">
+					</span>
+				</div>
+
+			</div>
+		</section>
+
+		<script src="./i miss my library_files/script.js"></script>
+	
+
+
+
+</body></html>
